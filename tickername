@@ -1,0 +1,23 @@
+Sub getdate()
+
+'column "B" has date format yyymmdd, move to dd/mm/yyyy
+
+Dim newdate As Date
+Dim dateastext As String
+Dim r As Range
+
+
+For Each r In Range("B2:B" & Cells(Rows.Count, "B").End(xlUp).Row)
+r.Value = DateSerial(Left(r.Value, 4), Mid(r.Value, 5, 2), Right(c.Value, 2))
+r.NumberFormat = "mm/dd/yyy"
+Next
+
+Const startDate As Date = #1/1/2015#
+Const endDate As Date = #12/31/2015#
+Dim d As Date
+For d = startDate To endDate
+'
+Next
+
+
+End Sub
